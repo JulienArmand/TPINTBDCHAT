@@ -9,7 +9,7 @@ public class SecondServer {
 			HelloImpl h = new HelloImpl("Hellow World !");
 			Hello h_stub = (Hello) UnicastRemoteObject.exportObject(h, 0);
 			SecondImpl s = new SecondImpl();
-			Second s_stub = (Second)UnicastRemoteObject.exportObject(s,1);
+			Second s_stub = (Second)UnicastRemoteObject.exportObject(s,0);
 			Registry registry = LocateRegistry.getRegistry();
 			registry.bind("Hello1", h_stub);
 			registry.bind("second", s_stub);
